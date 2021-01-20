@@ -1,14 +1,13 @@
 import React from 'react'
-import TodoItem from '../TodoItem/TodoItem'
+
+import ListItem from '../ListItem/ListItem'
 
 function List(props) {
-
-
-    return (
-        <ul >
-            <TodoItem id={props.thisId} name={props.thisName} isFavorit={props.thisIsFavorit} isChecked={props.thisIsChecked} />
-        </ul>
-    )
+     return (
+          <ul>
+               <ListItem listSetLi={props.mainSetLi} />
+          </ul>
+     )
 }
 
 export default List
