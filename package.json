@@ -1,6 +1,7 @@
 {
-  "name": "todo-list",
-  "version": "0.1.0",
+  "name": "react-platform",
+  "version": "1.0.0",
+  "description": "We are a team of 4 developers that creates react web apps!",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.8",
