@@ -1,16 +1,12 @@
 import React from 'react'
-import TodoItem from '../TodoItem/TodoItem'
 
-function List() {
+import ListItem from '../ListItem/ListItem'
+
+function List(props) {
      return (
-               <ul>
-                   <TodoItem /> 
-                   <TodoItem /> 
-                   <TodoItem /> 
-                   <TodoItem /> 
-                   <TodoItem /> 
-                   <TodoItem /> 
-               </ul>
+          <ul>
+               <ListItem listSetLi={props.mainSetLi} />
+          </ul>
      )
 }
 

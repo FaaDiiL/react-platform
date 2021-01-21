@@ -1,19 +1,13 @@
 import React from 'react'
 
-function AddListItem() {
-     function submitForm(e) {
-          return(
-             e.preventDefault()  
-          )
-     }
+function AddListItem(props) {
+    
+       
     return (
-        <form onSubmit={submitForm}>
-               <label>
-               Write a todo: 
-               <input type="text" />
-               </label>
-               <button>Add</button>
-          </form>
+        <>
+            <input onChange={props.handleOnChange}  />  
+            <button onClick={props.handleSubmit}>Add Todo</button>
+        </>
     )
 }
 
