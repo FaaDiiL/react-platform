@@ -1,27 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-import AddListItem from '../AddListItem/AddListItem'
-import List from '../List/List'
+import About from './About/About'
+import Contact from './Contact/Contact'
+import Home from './Home/Home'
+import Projects from './Projects/Projects'
 
 function Main() {
-     
-     const [inputVal,setInputVal] = useState('Default Todo')
-     const [liVal,setLiVal] = useState('Default Todo')
-
-     const handleChange = (e) => {
-          setInputVal(e.target.value)
-     }
-
-     const handleOnSubmit = () => {
-          setLiVal(inputVal)
-     }
-
-     return (
-          <>
-               <AddListItem handleOnChange={handleChange} handleSubmit={handleOnSubmit} />
-               <List mainSetLi={liVal} />
-          </>
-     )
+    return (
+        <>
+            <Switch>
+                <Route exact path='/'><Home /></Route>
+                <Route path='/about'><About /></Route>
+                <Route path='/projects'><Projects /></Route>
+                <Route path='/contact'><Contact /></Route>
+            </Switch>
+        </>
+    )
 }
 
 export default Main

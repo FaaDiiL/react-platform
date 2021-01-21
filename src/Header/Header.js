@@ -1,11 +1,11 @@
-import React from 'react'
-
-import Navigation from '../Navigation/Navigation'
+import Navigation from './Navigation/Navigation'
 
 function Header(props) {
      return (
-          <Navigation />
-              /*  <h1>{props.title}</h1>   */
+          <>
+               <h1>{props.title}</h1>
+               <Navigation />
+          </> 
      )
 }
 
