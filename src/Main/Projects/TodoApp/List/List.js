@@ -5,7 +5,7 @@ import ListItem from '../ListItem/ListItem'
 function List(props) {
      return (
           <ul>
-               <ListItem listSetLi={props.mainSetLi} />
+               <ListItem Todos={props.mainSetLi} />
           </ul>
      )
 }
