@@ -22,7 +22,7 @@ function TodoApp() {
           setLiVal(
                {
                     id: uuidv4(), 
-                    title: e.target.value,
+                    title: inputVal,
                     isComplete: false
                }
           )
