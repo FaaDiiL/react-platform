@@ -17,7 +17,7 @@ function TodoApp() {
                isComplete: false
           },
      ])
-
+     
      const handleChange = (e) => {           // Handle the change on the inputField inside the 'AddListItem-component'
           setInputVal(e.target.value)        // Saves all changes to te 'todos-state'
      }
@@ -30,16 +30,17 @@ function TodoApp() {
           }
      }
 
+
      const handleOnSubmit = (e) => {
-          e.preventDefault()                      // Prevent browser from reloading
-          if(inputVal !== '' ){                   // Condition - If InputVal is not empty, do this.
-               setTodos([...todos, addTodo()])    // Adding a new todo-object to te todos-array 
-               e.target[0].value = ''             // Clean the input field
-               setInputVal('')                    // Reset the 'todos-state'
+          e.preventDefault()                                     // Prevent browser from reloading
+          if(inputVal !== '' ){                                  // Condition - If InputVal is not empty, do this.
+               setTodos([...todos, addTodo()])                   // Condition - If InputVal is not empty, do this.
+               e.target[0].value = ''                            // Clean the input field
+               setInputVal('')                                   // Reset the 'todos-state'
           }
           
      }
-
+     
      return (
           <>
                <h3>TodoList</h3>
