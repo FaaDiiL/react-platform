@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ListItem = (props) => {
+const ListItem = ({ Todos }) => {
     return (
         <>
-        {props.listSetLi.map(item => <li key={item.id}>{item.title}</li> )}
+        {Todos.map(todo => <li key={todo.id}>{todo.title}</li> )}
         
         </>
             )
