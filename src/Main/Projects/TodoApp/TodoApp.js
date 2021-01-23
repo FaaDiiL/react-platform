@@ -11,17 +11,13 @@ function TodoApp() {
                                              // This is a state that will hold all the changes inside our input-field
      const [inputVal,setInputVal] = useState('')
 
-     const [todos, setTodos] = useState([    // Creating a state for our todos so we can put all todo-obj inside the array 
-          {
-               id: 1, 
-               title: 'Todo number 1',
-               isComplete: false
-          },
-     ])
+     const [todos, setTodos] = useState([])    // Creating a state for our todos so we can put all todo-obj inside the array 
+          
+     
      useEffect(() => {
           // Good!
           if(localStorage.getItem('todos')){
-               setTodos([...todos,JSON.parse((localStorage.getItem('todos')))])
+               setTodos(JSON.parse((localStorage.getItem('todos'))))
           }  
         }, [])
 
