@@ -2,12 +2,12 @@ import React from 'react'
 
 import ListItem from '../ListItem/ListItem'
 
-function List({mainSetLi, handleDelete}) {
+function List({mainTodos, handleDelete}) {
      return (
           <ul>
                <ListItem 
                handleDelete={handleDelete} 
-               listSetLi={mainSetLi} 
+               todos={mainTodos} 
                />
           </ul>
      )

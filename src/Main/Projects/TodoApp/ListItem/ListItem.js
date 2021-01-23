@@ -1,19 +1,19 @@
 import React from 'react'
 
-const ListItem = ({listSetLi, handleDelete}) =>{
-
+const ListItem = ({todos, handleDelete}) => {
     return (
-        
-        {listSetLi.map(item => {
-             return(
-            <li key={item.id}>{item.title}
-            <button onClick={() => handleDelete(item.id) }>Delete todo</button>
-            </li>)
-        }
+        <>
+            {todos.map(todo => {
+                return( 
+                        <li key={todo.id}>
+                        {todo.title} <button onClick={() => handleDelete(todo.id) }>Delete todo</button>
+                        </li>
+                    )
+                } 
+                )
+            }
+        </>
     )
+}
 
-    }
-    
-            
-        
-        
+export default ListItem
