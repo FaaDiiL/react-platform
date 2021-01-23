@@ -7,12 +7,10 @@ import AddListItem from './AddListItem/AddListItem'
 import List from './List/List'
 
 function TodoApp() {
+                                             // This is a state that will hold all the changes inside our input-field
+     const [inputVal,setInputVal] = useState('')
 
-     
-     
-     const [inputVal,setInputVal] = useState('InputVal')
-    
-     const [todos, setTodos] = useState([
+     const [todos, setTodos] = useState([    // Creating a state for our todos so we can put all todo-obj inside the array 
           {
                id: 1, 
                title: 'Todo number 1',
@@ -24,37 +22,37 @@ function TodoApp() {
           setInputVal(e.target.value)        // Saves all changes to te 'todos-state'
      }
 
-     const saveTodos = () => {
-
-         return {
+     const addTodo = () =>{                  // Function to initialize the new todo-object
+          return {
                id: uuidv4(), 
                title: inputVal,
                isComplete: false
-          
-               }
-}
-
-const handleOnSubmit = (e) => {
-     e.preventDefault();
-     
-     if(e.target[0].value !== ''){
-          setTodos([...todos, saveTodos()])
+          }
      }
-     e.target[0].value = ''
-     
-     
-}
 
-const handleDelete = (id) => {
-     const deleteTodos = todos.filter(todo => todo.id !== id)
-     setTodos(deleteTodos)
-}
+
+     const handleOnSubmit = (e) => {
+          e.preventDefault()                                     // Prevent browser from reloading
+          if(inputVal !== '' ){                                  // Condition - If InputVal is not empty, do this.
+               setTodos([...todos, addTodo()])                   // Condition - If InputVal is not empty, do this.
+               e.target[0].value = ''                            // Clean the input field
+               setInputVal('')                                   // Reset the 'todos-state'
+          }
+          
+     }
+
+     const handleDelete = (id) => {
+          const deleteTodos = todos.filter(todo => todo.id !== id)
+          setTodos(deleteTodos)
+     }
 
      return (
           <>
                <h3>TodoList</h3>
-               <AddListItem handleOnChange={handleChange} handleSubmit={handleOnSubmit} />
-               <List mainSetLi={todos} handleDelete={handleDelete} />
+               {/* This is where the todo will be created */}
+               <AddListItem handleOnChange={handleChange} handleSubmit={handleOnSubmit} /> 
+               {/*This will show us all the objects in a 'unordered list' */}
+               <List mainTodos={todos} handleDelete={handleDelete} />    
           </>
      )
 }
