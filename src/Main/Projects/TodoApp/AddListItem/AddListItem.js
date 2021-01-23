@@ -4,10 +4,10 @@ function AddListItem(props) {
     
        
     return (
-        <>
+        <form onSubmit={props.handleSubmit}>
             <input onChange={props.handleOnChange}  />  
-            <button onClick={props.handleSubmit}>Add Todo</button>
-        </>
+            <button >Add Todo</button>
+        </form>
     )
 }
 

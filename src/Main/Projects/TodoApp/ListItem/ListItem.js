@@ -1,10 +1,15 @@
 import React from 'react'
 
-const ListItem = (props) => {
+const ListItem = ({listSetLi, handleDelete}) => {
     return (
         <>
-        {props.listSetLi.map(item => <li key={item.id}>{item.title}</li> )}
-        
+        {listSetLi.map(item => {
+            return( 
+            <li key={item.id}>{item.title}
+            <button onClick={() => handleDelete(item.id) }>Delete todo</button>
+            </li>
+            )
+            } )}
         </>
             )
 }

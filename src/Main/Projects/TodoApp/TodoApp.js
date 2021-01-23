@@ -5,9 +5,11 @@ import AddListItem from './AddListItem/AddListItem'
 import List from './List/List'
 
 function TodoApp() {
+
+     
      
      const [inputVal,setInputVal] = useState('InputVal')
-     const [liVal,setLiVal] = useState({})
+    
      const [todos, setTodos] = useState([
           {
                id: 1, 
@@ -19,33 +21,40 @@ function TodoApp() {
 
      const handleChange = (e) => {
           setInputVal(e.target.value)
-          setLiVal(
-               {
-                    id: uuidv4(), 
-                    title: inputVal,
-                    isComplete: false
+          
+     }
+
+     const saveTodos = () => {
+
+         return {
+               id: uuidv4(), 
+               title: inputVal,
+               isComplete: false
+          
                }
-          )
-     }
+}
 
-     const handleOnSubmit = () => {
-          // setLiVal(
-          //      {
-          //           id: uuidv4(), 
-          //           title: inputVal,
-          //           isComplete: false
-          //      }
-          // )
-          setTodos([...todos, liVal])
-          console.log(todos)
-
+const handleOnSubmit = (e) => {
+     e.preventDefault();
+     
+     if(e.target[0].value !== ''){
+          setTodos([...todos, saveTodos()])
      }
+     e.target[0].value = ''
+     
+     
+}
+
+const handleDelete = (id) => {
+     const deleteTodos = todos.filter(todo => todo.id !== id)
+     setTodos(deleteTodos)
+}
 
      return (
           <>
                <h3>TodoList</h3>
                <AddListItem handleOnChange={handleChange} handleSubmit={handleOnSubmit} />
-               <List mainSetLi={todos} />
+               <List mainSetLi={todos} handleDelete={handleDelete} />
           </>
      )
 }
