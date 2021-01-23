@@ -2,10 +2,13 @@ import React from 'react'
 
 import ListItem from '../ListItem/ListItem'
 
-function List(props) {
+function List({mainTodos, handleDelete}) {
      return (
           <ul>
-               <ListItem Todos={props.mainSetLi} />
+               <ListItem 
+               handleDelete={handleDelete} 
+               todos={mainTodos} 
+               />
           </ul>
      )
 }

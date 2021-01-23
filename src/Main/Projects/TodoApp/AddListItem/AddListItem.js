@@ -6,7 +6,7 @@ function AddListItem(props) {
     return (
         <form onSubmit={props.handleSubmit}>
             <input onChange={props.handleOnChange}  />  
-            <button>Add Todo</button>
+            <button >Add Todo</button>
         </form>
     )
 }
