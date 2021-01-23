@@ -11,21 +11,17 @@ function TodoApp() {
      const [inputVal,setInputVal] = useState('')
 
      const [todos, setTodos] = useState([])    // Creating a state for our todos so we can put all todo-obj inside the array 
-          
+
      
-
-     useEffect(() => {
-          // Good!
+     useEffect(()=> {
           if(localStorage.getItem('todos')){
-               setTodos(JSON.parse((localStorage.getItem('todos'))))
-          }  
-        }, [])
+               setTodos(JSON.parse(localStorage.getItem('todos')))
+          }
+     },[])
 
      useEffect(() => {
-          // Good!
           localStorage.setItem('todos',JSON.stringify(todos))
-          
-        }, [todos])
+     }, [todos])
      
      const handleChange = (e) => {           // Handle the change on the inputField inside the 'AddListItem-component'
           setInputVal(e.target.value)        // Saves all changes to te 'todos-state'
@@ -39,15 +35,15 @@ function TodoApp() {
           }
      }
 
-
      const handleOnSubmit = (e) => {
           e.preventDefault()                                     // Prevent browser from reloading
           if(inputVal !== '' ){                                  // Condition - If InputVal is not empty, do this.
                setTodos([...todos, addTodo()])                   // Condition - If InputVal is not empty, do this.
                e.target[0].value = ''                            // Clean the input field
                setInputVal('')                                   // Reset the 'todos-state'
+               console.log('submit knapp tryckt')
+               
           }
-          
      }
 
      const handleDelete = (id) => {
