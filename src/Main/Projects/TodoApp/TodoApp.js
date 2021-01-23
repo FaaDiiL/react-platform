@@ -24,11 +24,6 @@ function TodoApp() {
           setInputVal(e.target.value)        // Saves all changes to te 'todos-state'
      }
 
-     const handleChange = (e) => {
-          setInputVal(e.target.value)
-          
-     }
-
      const saveTodos = () => {
 
          return {
