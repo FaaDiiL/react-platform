@@ -1,6 +1,5 @@
 import React from 'react'
 
-const ListItem = ({listSetLi, handleDelete}) => {
     return (
         <>
         {listSetLi.map(item => {
@@ -11,7 +10,3 @@ const ListItem = ({listSetLi, handleDelete}) => {
             )
             } )}
         </>
-            )
-}
-
-export default ListItem

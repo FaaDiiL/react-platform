@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
+// Generating new id whenever you use 'uuidv4()'
+
 import AddListItem from './AddListItem/AddListItem'
 import List from './List/List'
 
@@ -15,9 +17,12 @@ function TodoApp() {
                id: 1, 
                title: 'Todo number 1',
                isComplete: false
-
           },
      ])
+     
+     const handleChange = (e) => {           // Handle the change on the inputField inside the 'AddListItem-component'
+          setInputVal(e.target.value)        // Saves all changes to te 'todos-state'
+     }
 
      const handleChange = (e) => {
           setInputVal(e.target.value)
