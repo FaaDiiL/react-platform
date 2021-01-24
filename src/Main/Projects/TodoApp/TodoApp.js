@@ -37,7 +37,7 @@ function TodoApp() {
 
      const handleOnSubmit = (e) => {
           e.preventDefault()                                     // Prevent browser from reloading
-          if(inputVal !== '' ){                                  // Condition - If InputVal is not empty, do this.
+          if(e.target[0].value !== '' ){                                  // Condition - If InputVal is not empty, do this.
                setTodos([...todos, addTodo()])                   // Condition - If InputVal is not empty, do this.
                e.target[0].value = ''                            // Clean the input field
                setInputVal('')                                   // Reset the 'todos-state'
