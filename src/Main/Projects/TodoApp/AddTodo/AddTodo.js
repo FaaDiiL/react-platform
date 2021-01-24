@@ -2,9 +2,10 @@ import React from 'react'
 
 function AddTodo() {
      return (
-          <>
-          <h4>Add your todo Item!</h4>
-          </>
+          <form>
+               <input type="text" />
+               <input type="button" value="Add Todo" />
+          </form>
      )
 }
 
