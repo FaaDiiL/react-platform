@@ -3,10 +3,8 @@ import React from 'react'
 function Todo() {
      return (
           <>
-               <li>Todo</li>
-               <li>Todo</li>
-               <li>Todo</li>
-               <li>Todo</li>
+               <li><p>Todo</p><input type="checkbox" /><input type="button" value="Delete"/></li>
+               
           </>
      )
 }
