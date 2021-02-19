@@ -10,28 +10,35 @@ function Index() {
   const [expenseAmount, setExpenseAmount] = useState('Amount')
   
   const handleChange = ((e) => {
-    
+   
+
   switch(e.target.name){
 
     case 'titleData':
       setExpenseTitle(e.target.value)
       break;
 
-      case 'amountData':
-        setExpenseAmount(e.target.value)
-        break;
+    case 'amountData':
+      setExpenseAmount((e.target.value).replaceAll("-", ""))
+      break;
 
-      default:
-      console.log('Some err')
-        break;
+    default:
+    console.log('Some err')
+      break;
   }
+  
   })  
   
-  const handleSubmit = (e) => {
+  const handleIncome = (e) => {
     e.preventDefault()
     setExpenses([...expenses, {title: expenseTitle, amount: expenseAmount}])
   }
 
+  const handleExpense  = (e) => {
+    e.preventDefault()
+    setExpenses([...expenses, {title: expenseTitle, amount: `-${expenseAmount}`}])
+  }
+  
 
   useEffect(() => {
    console.log(expenses)
@@ -40,7 +47,7 @@ function Index() {
 
   return (
     <div>
-      <NewExpenses handleChange={handleChange} handleSubmit={handleSubmit} />
+      <NewExpenses handleChange={handleChange} handleIncome={handleIncome} handleExpense={handleExpense}/>
       <Table expenses={expenses}/>
       
     </div>
