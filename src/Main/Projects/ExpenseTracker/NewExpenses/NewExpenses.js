@@ -1,6 +1,6 @@
 import React from 'react'
 
-// some comment! Modified by Fadil. New comment.
+// some comment! Modified by Fadil. New comment. Hej
 function NewExpenses({handleChange, handleSubmit}) {
      return (
           <div>
