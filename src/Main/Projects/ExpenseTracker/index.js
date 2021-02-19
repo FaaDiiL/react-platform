@@ -29,7 +29,8 @@ function Index() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    setExpenses([...expenses, {title: expenseTitle, amount: expenseAmount}])
+    setExpenses([...expenses, {title: expenseTitle, date: `${new Date().toISOString().slice(0, 10)}`, time: `${new Date().toISOString().slice(11, 16)}`, amount: expenseAmount}])
+     
   }
 
 
