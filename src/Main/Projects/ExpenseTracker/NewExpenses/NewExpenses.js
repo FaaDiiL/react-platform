@@ -1,13 +1,21 @@
 import React from 'react'
 
-// some comment! Modified by Fadil. New comment. Hej
-function NewExpenses({handleChange, handleSubmit}) {
+
+
+function NewExpenses({handleChange, handleIncome, handleExpense}) {
+
+     
+
      return (
           <div>
-               <form onSubmit={handleSubmit}>
-                   <input onChange={handleChange} name ='titleData' type="text" placeholder="Type a expense"  />
-                   <input  onChange={handleChange} name ='amountData' type="number" placeholder="Cost" />
-                   <button type="submit">Add</button>
+               <h2>Expense Tracker</h2>
+               <form>
+                   <input onChange={handleChange} name ='titleData' type="text" placeholder="Income/Expense title"  />
+                   <input  onChange={handleChange} name ='amountData' min='0' type="number" placeholder="Sum" />
+                   <br/><br/>
+                   <button onClick={handleIncome} type="submit" className="incomeButton">Income</button>
+                   <button onClick={handleExpense} type="submit" className="expenseButton">Expense</button>
+                   
                </form>
           </div>
      )
