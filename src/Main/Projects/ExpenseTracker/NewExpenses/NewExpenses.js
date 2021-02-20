@@ -1,10 +1,6 @@
 import React from 'react'
 
-
-
 function NewExpenses({handleChange, handleIncome, handleExpense}) {
-
-     
 
      return (
           <div>
@@ -15,7 +11,6 @@ function NewExpenses({handleChange, handleIncome, handleExpense}) {
                    <br/><br/>
                    <button onClick={handleIncome} type="submit" className="incomeButton">Income</button>
                    <button onClick={handleExpense} type="submit" className="expenseButton">Expense</button>
-                   
                </form>
           </div>
      )

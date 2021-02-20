@@ -1,41 +1,50 @@
 import React from 'react'
-import styled from "styled-components"
+import styled from 'styled-components'
 
-
-const StyledUl = styled.ul`
-
-padding: 0 0;
-
+const Ul = styled.ul `
+min-width:100%;
 li{
-  display:flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #808080;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+}
+li span {
+  width:33.33%;
+}
+.expense-amount{
+color: red;
+}
+.income-amount{
+color:green;
+}
+.date{
+  color: blue
 }
 `
-
 function Table({expenses}) {
 
 
   return (
   
-    <StyledUl>
-      <li>
+    <Ul>
+    <li>
         <span>Title</span>
         <span>Datum</span>
         <span>Amount</span>
       </li>
-      {expenses.map((expense, index) => 
-      <li key={index}>
-        <span>{expense.title}</span>
-        <span>Date</span>
-        <span>{expense.amount}</span>
-      </li>)} 
-      <li>
+     {expenses.map((expense, index) => 
+(
+     <li key={index}>
+     <span>{expense.title}</span>
+     <span>{expense.date}</span>
+     <span className={`${(expense.type)?'expense-amount':'income-amount'}`}>{expense.amount}</span></li>
+)     
+     )} 
+     <li>
         <span>Total</span>
         <span>Summa</span>
       </li>
-    </StyledUl>
+    </Ul>
 
   )
 }
