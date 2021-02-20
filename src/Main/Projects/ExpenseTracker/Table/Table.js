@@ -28,7 +28,7 @@ function Table({expenses}) {
       {expenses.map((expense, index) => 
       <li key={index}>
         <span>{expense.title}</span>
-        <span>Datum</span>
+        <span>Date</span>
         <span>{expense.amount}</span>
       </li>)} 
       <li>
