@@ -23,6 +23,9 @@ color:green;
 `
 function Table({expenses}) {
 
+  const TotalSum = expenses.map(expense => parseInt(expense.amount)).reduce( (acc, curr) => (acc + curr), 0)
+
+
 
   return (
   
@@ -42,7 +45,7 @@ function Table({expenses}) {
      )} 
      <li>
         <span>Total</span>
-        <span>Summa</span>
+        <span>{TotalSum}</span>
       </li>
     </Ul>
 
