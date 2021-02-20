@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import NewExpenses from './NewExpenses/NewExpenses'
 import Table from './Table/Table'
@@ -11,7 +11,6 @@ function Index() {
   
   const handleChange = ((e) => {
    
-
   switch(e.target.name){
 
     case 'titleData':
@@ -27,23 +26,30 @@ function Index() {
       break;
   }
   
-  })  
+  })
   
   const handleIncome = (e) => {
     e.preventDefault()
-    setExpenses([...expenses, {title: expenseTitle, date: `${new Date().toISOString().slice(0, 10)}`, time: `${new Date().toISOString().slice(11, 16)}`, amount: expenseAmount}])
-     
+    setExpenses([...expenses, {
+      title: expenseTitle, 
+      date: new Date().toISOString().slice(0, 10),
+      time: new Date().toISOString().slice(11, 16),
+      amount: expenseAmount,
+      type: false
+    }])
   }
 
   const handleExpense  = (e) => {
     e.preventDefault()
-    setExpenses([...expenses, {title: expenseTitle, amount: `-${expenseAmount}`}])
+    setExpenses([...expenses, {
+      title: expenseTitle,
+      date: new Date().toISOString().slice(0, 10),
+      time: new Date().toISOString().slice(11, 16),
+      amount: '-' +expenseAmount,
+      type: true
+    }])
   }
-  
 
-  useEffect(() => {
-   console.log(expenses)
-  }, [expenses])
 
 
   return (

@@ -37,7 +37,7 @@ function Table({expenses}) {
      <li key={index}>
      <span>{expense.title}</span>
      <span>{expense.date}</span>
-     <span className={`${(expense.amount).toString(0,1) === '-'?'expense-amount':'income-amount'}`}>{expense.amount}</span></li>
+     <span className={`${(expense.type)?'expense-amount':'income-amount'}`}>{expense.amount}</span></li>
 )     
      )} 
      <li>
