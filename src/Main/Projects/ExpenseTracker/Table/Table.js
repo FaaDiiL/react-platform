@@ -22,9 +22,16 @@ color:green;
 }
 `
 function Table({expenses}) {
+
+
   return (
   
     <Ul>
+    <li>
+        <span>Title</span>
+        <span>Datum</span>
+        <span>Amount</span>
+      </li>
      {expenses.map((expense, index) => 
 (
      <li key={index}>
@@ -33,7 +40,10 @@ function Table({expenses}) {
      <span className={`${(expense.amount).toString(0,1) === '-'?'expense-amount':'income-amount'}`}>{expense.amount}</span></li>
 )     
      )} 
-     
+     <li>
+        <span>Total</span>
+        <span>Summa</span>
+      </li>
     </Ul>
 
   )
