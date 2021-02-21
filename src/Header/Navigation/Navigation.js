@@ -5,12 +5,21 @@ import styled from 'styled-components'
 
 const StyledUl = styled.ul`
 list-style: none;
+display:flex;
+justify-content: space-evenly;
 `
 
 const StyledLi = styled.li`
-background-color:  #370637;
-line-height: 2.5rem;
-margin: 5px 0px;
+/* e-height: 2.5rem; */
+/* margin: 5px 0px; */
+
+a{
+    color: white;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 `
 
 function Navigation() {

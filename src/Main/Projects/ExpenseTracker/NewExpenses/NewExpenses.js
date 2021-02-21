@@ -8,7 +8,7 @@ function NewExpenses({handleChange, handleIncome, handleExpense}) {
                <form>
                    <input onChange={handleChange} name ='titleData' type="text" placeholder="Income/Expense title"  />
                    <input  onChange={handleChange} name ='amountData' min='0' type="number" placeholder="Sum" />
-                   <br/><br/>
+                   
                    <button onClick={handleIncome} type="submit" className="incomeButton">Income</button>
                    <button onClick={handleExpense} type="submit" className="expenseButton">Expense</button>
                </form>
