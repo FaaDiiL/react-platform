@@ -1,8 +1,20 @@
 import React, { useState } from 'react'
-
 import NewExpenses from './NewExpenses/NewExpenses'
 import Table from './Table/Table'
 import PinnedExp from './PinnedExp/PinnedExp'
+import styled from 'styled-components'
+
+const StyledExpenses = styled.div`
+font-family: Arial, Helvetica, sans-serif;
+width: 100vw;
+height: 80vh;
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+background: linear-gradient(135deg, #3f87a6 30%, #ebf8e1 50%, #3f87a6 80%);
+color: black;
+`
 
 function Index() {
   const [expenses, setExpenses] = useState([])
@@ -59,12 +71,14 @@ const handleDelete = (delID) => {
 
 
   return (
-    <div>
+    <>
+    <StyledExpenses id='expensetracker'>
       
       <NewExpenses handleChange={handleChange} handleIncome={handleIncome} handleExpense={handleExpense}/>
       <Table expenses={expenses} handleDelete={handleDelete}/>
       <PinnedExp />
-    </div>
+    </StyledExpenses>
+    </>
   )
 }
 

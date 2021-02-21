@@ -2,18 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Ul = styled.ul `
-min-width:100%;
+width: 350px;
 margin: 16px 0px;
 padding: 0px;
+list-style: none;
+
 li{
   position: relative;
-  padding: 10px 0px;
+  padding: 10px 2px;
   width:100%;
   display: flex;
   justify-content:space-between;
 }
 li span {
-  width:33.33%;
+  padding: 0px 30px;
+  /* margin: 33.33.%; */
 }
 .expense-amount{
 color: red;
@@ -27,6 +30,7 @@ color:green;
 .date{
   color: blue
 }
+
 /* .buttonWrapper{
 
 display: none;
@@ -39,8 +43,8 @@ display: block;
 } */
 .button{
   position: absolute;
-  left: -50px;
-  width: 8%;
+  left: -40px;
+  width: 10%;
   background: #ba181b;
   color: white;
   font-size: 15px;
