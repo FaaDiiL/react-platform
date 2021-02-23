@@ -1,16 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import Todo from './Todo/Todo'
-
-function ViewTodos() {
-     return (
-          <>
-             <h4>This is your list of todos!</h4>
-             <ul>
-               <Todo /> { /* Prints a list of Li's */}
-             </ul>
-          </>
-     )
+function ViewTodos({ newTodos }) {
+  // console.log(newTodos)
+  return (
+    <>
+      <h4>This is your list of todos!</h4>
+      <ul>
+        {newTodos.map((todo, index) => (
+          <li key={index}>
+            <p>{todo.name}</p>
+            <input type="checkbox" />
+            <input type="button" value="Delete" />
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
-export default ViewTodos
+export default ViewTodos;

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-function AddTodo() {
-     return (
-          <form>
-               <input type="text" />
-               <input type="button" value="Add Todo" />
-          </form>
-     )
+function AddTodo({ handleChange, handleSubmit }) {
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="text" onChange={handleChange} />
+      <button type="submit">Add Todo</button>
+    </form>
+  );
 }
 
-export default AddTodo
+export default AddTodo;
