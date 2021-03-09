@@ -1,8 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 
+const StyledContainer = styled.div`
+min-height: 75vh;
+`
 function Contact() {
     return (
-        <h2>Contact</h2>
+        <StyledContainer>
+            <h2>Contact</h2>
+        </StyledContainer>
     )
 }
 

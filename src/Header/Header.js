@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
+import logo from '../img/logo.png'
 import Navigation from './Navigation/Navigation'
 
 const StyledHeader = styled.header`
-color: #fff;
-background-color: #370617;
-width: 100vw;
+background: url(${logo}) no-repeat ;
+width: 100%;
 `
 
 function Header(props) {

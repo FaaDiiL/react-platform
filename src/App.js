@@ -8,7 +8,6 @@ import Main from './Main/Main'
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 50vw;
   margin: 0 auto;
 `
